@@ -1,0 +1,171 @@
+*{
+    margin:0%;
+    padding:0%
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'poppins';
+    font-size: medium;
+}
+.container{
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:30px auto;
+}
+
+nav div a{
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 8px;
+    margin-right: 10px;
+    position: relative;
+    color: white;
+    right:5px;
+    text-decoration: none;
+    background-color: #1c76fd;
+    border-radius: 10px;
+    font-size: larger;
+    box-shadow: 3px 3px 3px rgb(133, 133, 133);
+}
+
+a:hover{
+    background-color: #0868f8;
+}
+
+
+.incontainer{
+    width: 60vw;
+}
+.incontainer input{
+    margin: 15px 0px;
+    font-size: larger;
+}
+.incontainer label{
+    font-size: larger;
+}
+.btn{
+    font-size: larger;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(133, 133, 133);
+}
+nav{
+    width:99vw;
+    color:white;
+}
+nav h1{
+    font-size: x-large;
+    color: #023075;
+    margin: 0px 20px;
+    font-family: 'Berkshire Swash';
+}
+.inotebook{
+    font-size: xx-large;
+    font-family: 'Berkshire Swash', cursive;
+    color: #023075;
+}
+.notesContainer{
+    width: 99vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh 0px;
+}
+.notes{
+    border-radius: 20px;
+    border: 1.3px solid rgb(202, 202, 202);
+    box-shadow: 3.4px 3.4px 3px rgb(202, 202, 202);
+    height: fit-content;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.notes div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.notes h2{
+    width:90%;
+    overflow-wrap: break-word;
+    height: fit-content;
+    font-weight: 400;
+}
+.notes p{
+    width: 90%;
+    height:fit-content;
+    overflow-wrap: break-word;
+    max-height: 15vw;
+    overflow-y:auto;
+}
+
+.home{
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 8px;
+    position: relative;
+    color: white;
+    left:5px;
+    bottom: 20px;
+    text-decoration: none;
+    background-color: #1c76fd;
+    border-radius: 10px;
+    font-size: larger;
+    box-shadow: 3px 3px 3px rgb(133, 133, 133);
+}
+.home:hover{
+    background-color: #0868f8;
+}
+
+@media (max-width:900px) and (min-width:600px){
+    .notesContainer{
+        grid-template-columns: 45vw 45vw;
+    }
+
+    .container{
+        width: 90vw;
+    }
+    .incontainer{
+        width:100%;
+    }
+    body{
+        font-size: medium;
+    }
+}
+
+
+@media (max-width:600px) and (min-width:0px){
+    .notesContainer{
+        grid-template-columns: 90vw;
+    }
+
+    .container{
+        width: 90vw;
+    }
+    .incontainer{
+        width:100%;
+    }
+    body{
+        font-size: small;
+    }
+    nav h1{
+        font-size: larger;
+        color: black;
+        margin: 0px 20px;
+    }
+    .inotebook{
+        font-size: x-large;
+    }
+}
+

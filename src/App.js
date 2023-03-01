@@ -9,8 +9,8 @@ Route, } from "react-router-dom"
 function App() {
   return (
     <>
-    <Navbar />
     <Router>
+    <Navbar />
       <Routes>
         <Route exact path="/" element={<NotesArea/>} />
         <Route exact path="/login" element={<Login/>} />

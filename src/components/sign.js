@@ -26,8 +26,7 @@ export default function Signup(){
 
 
     const signup =async()=>{
-        let signBtn = document.getElementById("signup");
-        signBtn.innerHTML="signing in...";
+        
         let isemail = email.indexOf("@gmail.com");
         if(name.length<2){
            setNameAlert("Enter a valid string")
@@ -41,6 +40,8 @@ export default function Signup(){
             setPasswordAlert("Plaese enter a strong password for security")
         }
         else{
+            let signBtn = document.getElementById("signup");
+            signBtn.innerHTML="signing in...";
             setEmailAlert("");
             setNameAlert("");
             setPasswordAlert("");

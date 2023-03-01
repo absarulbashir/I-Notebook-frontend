@@ -11,7 +11,7 @@ export default function ContextApi (props){
     //login
     const login = async (Email,Password) => {
         islogin.current=false;
-        const response = await fetch("https://i-notebook-hv5d.onrender.com/api/auth/login", {
+        const response = await fetch("https://inotebook-backend-rs2s.onrender.com/api/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -40,7 +40,7 @@ export default function ContextApi (props){
     //Signup 
     const signup= async (Name,Email,Password,Data)=>{
         islogin.current=false;
-        const response = await fetch("https://i-notebook-hv5d.onrender.com/api/auth/signup", {
+        const response = await fetch("https://inotebook-backend-rs2s.onrender.com/api/auth/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -70,7 +70,7 @@ export default function ContextApi (props){
     }
 
     const addNote = async (Title,Desc,Email,Password)=>{
-        await fetch("https://i-notebook-hv5d.onrender.com/api/auth/addnote", {
+        await fetch("https://inotebook-backend-rs2s.onrender.com/api/auth/addnote", {
             method: "POST",
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify({
@@ -82,7 +82,7 @@ export default function ContextApi (props){
         });       
     }
     const deleteNote = async (Email,Password,index)=>{
-        await fetch("https://i-notebook-hv5d.onrender.com/api/auth/deletenote", {
+        await fetch("https://inotebook-backend-rs2s.onrender.com/api/auth/deletenote", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -92,6 +92,14 @@ export default function ContextApi (props){
             }),
         });     
        
+    }
+
+    const logOut = ()=>{
+        name.current="";
+        email.current="";
+        password.current="";
+        setData(data);
+        
     }
 
 
@@ -105,7 +113,8 @@ export default function ContextApi (props){
             signup:signup,
             addNote:addNote,
             islogin:islogin.current,
-            deleteNote:deleteNote
+            deleteNote:deleteNote,
+            logOut,
         }}>
             {props.children}
         </Context.Provider>

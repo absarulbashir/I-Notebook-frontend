@@ -20,8 +20,6 @@ export default function Login() {
     };
 
     const login=async()=>{
-        let logBtn = document.querySelector("#login");
-        logBtn.innerHTML="logging in...";
         let isemail = email.indexOf("@gmail.com");
         if(isemail===-1){
             setEmailAlert("Enter a valid email address");
@@ -30,6 +28,8 @@ export default function Login() {
             setPasswordAlert("Enter a valid password");
         }
         else{
+            let logBtn = document.querySelector("#login");
+            logBtn.innerHTML="logging in...";
             let log=await context.login(email,password);
             if(log==="login successfull"){
                 navigate("/");

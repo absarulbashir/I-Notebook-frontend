@@ -1,19 +1,24 @@
 import { useContext,useEffect,useState } from "react";
 import { Context } from "./context.js";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const context=useContext(Context);
   const [logSign,setLogSign] = useState({
-    display:"inline-block"
+    display:"inline-block",
+    cursor:"pointer"
   });
   const [logOut,setLogOut] = useState({
-    display:"none"
+    display:"none",
   });
+
 
   useEffect(()=>{
     if(context.islogin){
       setLogOut({
-        display:"inline-block"
+        display:"inline-block",
+        cursor:"pointer"
       })
       setLogSign({
         display:"none"
@@ -31,11 +36,12 @@ export default function Navbar() {
            I-Notebook
           </h1>
           <div> 
-             <a style={logSign} href="/login">Login</a> 
-             <a style={logSign} href="/signup">Sign up</a>
-             <a style={logOut} onClick={()=>{
+             <a style={logSign} onClick={()=>{navigate("/login")}}>Login</a> 
+             <a style={logSign} onClick={()=>{navigate("/signup")}} >Sign up</a>
+             <a style={logOut} onClick={async()=>{
               localStorage.clear();
-             }} href="/" >Logout</a>
+              window.location.reload();
+             }} >Logout</a>
           </div>
       </nav>
     </>

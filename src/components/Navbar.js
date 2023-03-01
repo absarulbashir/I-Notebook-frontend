@@ -29,12 +29,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar navbar-light bg-light">
-          <h1>
+          <h2>
             {context.name}
-          </h1>
-          <h1 className="inotebook">
+          </h2>
+          <h2 className="inotebook">
            I-Notebook
-          </h1>
+          </h2>
           <div> 
              <a style={logSign} onClick={()=>{navigate("/login")}}>Login</a> 
              <a style={logSign} onClick={()=>{navigate("/signup")}} >Sign up</a>

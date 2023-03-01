@@ -60,16 +60,16 @@ nav{
     width:99vw;
     color:white;
 }
-nav h1{
+nav h2{
     font-size: x-large;
-    color: #023075;
+    color: rgb(36, 36, 36);
     margin: 0px 20px;
     font-family: 'Berkshire Swash';
 }
 .inotebook{
     font-size: xx-large;
     font-family: 'Berkshire Swash', cursive;
-    color: #023075;
+    color:  rgb(36, 36, 36);
 }
 .notesContainer{
     width: 99vw;

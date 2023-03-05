@@ -1,16 +1,14 @@
-import { createContext,useRef,useState } from "react";
-
+import { createContext,useState } from "react";
 const Context = createContext();
 
 export default function ContextApi (props){
-    const name = useRef("");
+    const [name,setName] = useState("");
     const [data, setData] = useState([]);
-    const email = useRef("");
-    const password = useRef("");
-    const islogin = useRef(false);
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+    const [islogin,setIslogin] = useState(false);
     //login
     const login = async (Email,Password) => {
-        islogin.current=false;
         const response = await fetch("https://inotebook-backend-rs2s.onrender.com/api/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -20,17 +18,17 @@ export default function ContextApi (props){
             }),
         });
         const res = await response.json();
-        if (res.error === "No user found") {
-            alert("No user found");
-            email.current="";
-            password.current="";
+        if (res.error) {
+            setEmail("");
+            setPassword("");
             return "no user found";
+            
         } else {
             setData(res.data);
-            name.current=res.name;
-            email.current=Email;
-            password.current=Password;
-            islogin.current=true;
+            setName(res.name);
+            setEmail(Email);
+            setPassword(Password);
+            setIslogin(true);
             localStorage.clear();
             localStorage.setItem("detail",JSON.stringify({email:Email,password:btoa(Password)}));  
             return "login successfull";
@@ -39,7 +37,6 @@ export default function ContextApi (props){
 
     //Signup 
     const signup= async (Name,Email,Password,Data)=>{
-        islogin.current=false;
         const response = await fetch("https://inotebook-backend-rs2s.onrender.com/api/auth/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -51,18 +48,17 @@ export default function ContextApi (props){
             }),
         });
         const res = await response.json();
-        if(res.error === "A user with this email or password already exists."){
-            alert("A user with this email or password already exists.");
-            email.current="";
-            password.current="";
+        if(res.error){
+            setEmail("");
+            setPassword("");
             return "user exists";
         }
         else {
-            name.current=Name;
-            email.current=Email;
-            email.password=Password;
+            setIslogin(true)
+            setName(Name);
+            setPassword(Password);
+            setEmail(Email);
             setData(Data);
-            islogin.current=true;
             localStorage.clear();
             localStorage.setItem("detail",JSON.stringify({email:Email,password:btoa(Password)}));
             return "signin successfull";
@@ -94,27 +90,18 @@ export default function ContextApi (props){
        
     }
 
-    const logOut = ()=>{
-        name.current="";
-        email.current="";
-        password.current="";
-        setData(data);
-        
-    }
-
 
     return(
         <Context.Provider value={{
             login:login,
             data:data,
-            name:name.current,
-            email:email.current,
-            password:password.current,
+            name:name,
+            email:email,
+            password:password,
             signup:signup,
             addNote:addNote,
-            islogin:islogin.current,
+            islogin:islogin,
             deleteNote:deleteNote,
-            logOut,
         }}>
             {props.children}
         </Context.Provider>

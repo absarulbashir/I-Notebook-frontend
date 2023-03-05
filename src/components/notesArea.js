@@ -16,6 +16,7 @@ export default function NotesArea() {
         }
     }, []);
 
+    
 
     useEffect(() => {
         setData(context.data);
@@ -58,47 +59,33 @@ let year = date_ob.getFullYear();
         }
     }
 
-    if (!context.islogin && localSt) {
-        return <img src={Loading} alt="Loading..." style={{ display: "block", margin: "auto", marginTop: "25vh", width: "120px" }} />
+    if (localSt && context.islogin===false) {
+        document.querySelector("body").style.background="white";
+        return <img src={Loading} alt="Loading..." style={{ display: "block", margin: "auto", marginTop: "20vh", width: "25vw" }} />
     }
-
+    else{
+        document.querySelector("body").style.background="rgb(250, 224, 255)";
+    }
+    
+    
     return (
         <>
-            <div className="container" style={{ height: "80vh" }}>
-                <div className="incontainer">
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">
-                            Title
-                        </label>
+            <div className="container">
                         <input
                             type="text"
-                            className="form-control"
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
                             value={title}
                             onChange={fillTitle}
+                            placeholder="Enter a title"
                         />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">
-                            Description
-                        </label>
+                   
                         <textarea
-                            style={{ height: "32vh", fontSize: "larger" }}
-                            className="form-control"
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
                             value={desc}
                             onChange={fillDesc}
+                            placeholder="Enter a description"
                         />
-                        <div id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {descAlert}
-                        </div>
-                    </div>
-                    <button className="btn btn-primary" onClick={addNote}>
+                    <button className="logBtn" onClick={addNote}>
                         Add Note
                     </button>
-                </div>
             </div>
 
             <div className="notesContainer">

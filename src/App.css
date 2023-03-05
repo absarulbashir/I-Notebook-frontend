@@ -9,52 +9,85 @@ body{
     align-items: center;
     font-family: 'poppins';
     font-size: medium;
+    --theme: rgb(91, 6, 119);
+    background: rgb(250, 224, 255);
+    transition: all;
 }
-.container{
-    width: 70vw;
-    height: 70vh;
+
+.logContainer{
+    width: 30vw;
+    height: 65vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin:30px auto;
+    margin:60px auto;
+    border: 3px solid var(--theme);
+    border-radius: 0px;
+    border-top-right-radius:40px;
+    border-bottom-left-radius:40px;
+    padding: 10px 0px;
 }
 
-nav div a{
+.logContainer input{
+    width:80%;
+    height: 6.5vh;
+    border-radius: 10px;
+    margin: 20px 0px;
+    outline: none;
+    border: none;
+    border-bottom:2px solid var(--theme);
+    background: none;
+    padding: 0px 6px;
+    color: rgb(65, 65, 65);
+    border-radius: 5px;
+    font-size: large;
+}
+
+nav{
+    background-color:rgb(174, 1, 209);
+}
+
+.navbtn{
+    font-size: large;
     width: fit-content;
-    height: fit-content;
     padding: 4px 8px;
-    margin-right: 10px;
-    position: relative;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius:0px;
+    border: none;
+    margin: 0px 5px;
+    background-color: var(--theme);
     color: white;
-    right:5px;
-    text-decoration: none;
-    background-color: #1c76fd;
-    border-radius: 10px;
-    font-size: larger;
-    box-shadow: 3px 3px 3px rgb(133, 133, 133);
+    position: relative;
+    right: 40px;
+    text-decoration:none;
+    transition: all;
+    transition-duration: 0.5s;
+    border: 2px solid white;
+   
+}
+.navbtn:hover{
+    background-color:rgb(63, 2, 83) ;
 }
 
-a:hover{
-    background-color: #0868f8;
-}
-
-
-.incontainer{
-    width: 60vw;
-}
-.incontainer input{
-    margin: 15px 0px;
-    font-size: larger;
-}
-.incontainer label{
-    font-size: larger;
-}
-.btn{
-    font-size: larger;
+.logBtn{
+    font-size: large;
     width: fit-content;
     padding: 4px 8px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgb(133, 133, 133);
+    border-top-right-radius: 10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius:0px;
+    border: none;
+    margin: 5px 0px;
+    background-color: var(--theme);
+    color: white;
+   
+}
+.logBtn:hover{
+    background-color:rgb(63, 2, 83) ;
 }
 nav{
     width:99vw;
@@ -62,15 +95,16 @@ nav{
 }
 nav h2{
     font-size: x-large;
-    color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
     margin: 0px 20px;
-    font-family: 'Berkshire Swash';
+    font-family: 'Audiowide';
 }
 .inotebook{
     font-size: xx-large;
-    font-family: 'Berkshire Swash', cursive;
-    color:  rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
 }
+
+
 .notesContainer{
     width: 99vw;
     height: fit-content;
@@ -81,51 +115,99 @@ nav h2{
     margin: 10vh 0px;
 }
 .notes{
-    border-radius: 20px;
-    border: 1.3px solid rgb(202, 202, 202);
-    box-shadow: 3.4px 3.4px 3px rgb(202, 202, 202);
+    border-radius: 0px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius: 25px;
+    border: 2px solid var(--theme);
     height: fit-content;
     padding: 20px;
     margin: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-family: 'poppins';
+    color: rgb(41, 41, 41);
 }
 .notes div{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 }
+.notes div p{
+   width:fit-content;
+}
+
+
 .notes h2{
     width:90%;
     overflow-wrap: break-word;
     height: fit-content;
     font-weight: 400;
 }
+
 .notes p{
     width: 90%;
     height:fit-content;
     overflow-wrap: break-word;
     max-height: 15vw;
     overflow-y:auto;
+    font-weight: 500;
 }
 
 .home{
-    width: fit-content;
-    height: fit-content;
     padding: 4px 8px;
     position: relative;
     color: white;
     left:5px;
     bottom: 20px;
+    font-size: large;
+    width: fit-content;
+    padding: 4px 8px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius:0px;
+    border: none;
+    margin: 5px 0px;
+    background-color: var(--theme);
+    color: white;
     text-decoration: none;
-    background-color: #1c76fd;
-    border-radius: 10px;
-    font-size: larger;
-    box-shadow: 3px 3px 3px rgb(133, 133, 133);
 }
 .home:hover{
-    background-color: #0868f8;
+    background-color:rgb(63, 2, 83);
+}
+
+.container{
+    border: 3px solid var(--theme);
+    width: 32vw;
+    height: 70vh;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius:40px;
+}
+.container input,textarea{
+    width: 80%;
+    border-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 2px solid var(--theme);
+    border-bottom: 3px solid var(--theme);
+    background: none;
+    margin: 20px 0px;
+    height: 7vh;
+    outline: none;
+    padding: 4px 10px;
+    font-size: large;
+    color: rgb(34, 34, 34);
+}
+.container textarea{
+    height: 25vh;
 }
 
 @media (max-width:900px) and (min-width:600px){
@@ -134,10 +216,12 @@ nav h2{
     }
 
     .container{
-        width: 90vw;
+        width: 70vw;
+        height: 60vh;
     }
-    .incontainer{
-        width:100%;
+    .logContainer{
+        width:70vw;
+        height: 60vh;
     }
     body{
         font-size: medium;
@@ -151,21 +235,30 @@ nav h2{
     }
 
     .container{
-        width: 90vw;
-    }
-    .incontainer{
-        width:100%;
+        width: 83vw;
+        padding: 0px;
+        height: 55vh;
     }
     body{
         font-size: small;
     }
-    nav h1{
-        font-size: larger;
-        color: black;
+    nav h2{
+        font-size: large;
         margin: 0px 20px;
     }
     .inotebook{
-        font-size: x-large;
+        font-size: larger;
+    }
+    .logBtn{
+        font-size: medium;
+    }
+   .navbtn {
+        font-size: medium;
+        padding: 1px 4px;
+    }
+    .logContainer{
+        width: 83vw;
+        height: 55vh;
     }
 }
 

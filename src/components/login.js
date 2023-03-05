@@ -2,14 +2,14 @@ import React, { useState ,useContext } from "react";
 import { Context } from "./context.js";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import {toast} from "react-toastify";
+
 export default function Login() {
     
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const context=useContext(Context);
-    const [emailAlert,setEmailAlert]= useState("");
-    const [passwordAlert,setPasswordAlert]= useState("");
 
     const fillEmail = (event) => {
         setEmail(event.target.value);
@@ -21,20 +21,39 @@ export default function Login() {
 
     const login=async()=>{
         let isemail = email.indexOf("@gmail.com");
-        if(isemail===-1){
-            setEmailAlert("Enter a valid email address");
+        if(isemail===-1 || email.length<=10){
+            toast( "Enter a valid Email Address" ,{
+                position:"bottom-right",
+                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                progressStyle:{background:"brown"},
+               })
         }
         else if(password.length<6){
-            setPasswordAlert("Enter a valid password");
+            toast( "Enter a valid Password" ,{
+                position:"bottom-right",
+                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                progressStyle:{background:" rgb(135, 2, 2)"},
+               })
         }
         else{
             let logBtn = document.querySelector("#login");
             logBtn.innerHTML="logging in...";
             let log=await context.login(email,password);
             if(log==="login successfull"){
+                toast( "Login Successfull" ,{
+                    position:"bottom-right",
+                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                    progressStyle:{background:"darkgreen"},
+                   })
                 navigate("/");
             }
             else{
+                toast( "No User Found" ,{
+                    position:"bottom-right",
+                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                    progressStyle:{background:"brown"},
+                })
+
                 logBtn.innerHTML="Login";
             }
         }
@@ -42,46 +61,26 @@ export default function Login() {
     }
     return (
         <>
-            <div className="container">
-                <div className="incontainer">
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">
-                            Email address
-                        </label>
+            <div className="logContainer">
                         <input
                             type="email"
-                            className="form-control"
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
                             value={email}
                             onChange={fillEmail}
+                            placeholder="Enter your Email"
                         />
-                         <div className="form-text" style={{color:"red",fontSize:"large"}}>
-                           {emailAlert}
-                        </div>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">
-                            Password
-                        </label>
+                
                         <input
                             type="password"
-                            className="form-control"
-                            id="exampleInputPassword1"
                             value={password}
                             onChange={fillPassword}
+                            placeholder="Enter your Password"
                         />
-                         <div className="form-text" style={{color:"red",fontSize:"large"}}>
-                           {passwordAlert}
-                        </div>
-                    </div>
-
-                    <button className="btn btn-primary" id="login" onClick={login}>
+                    
+                    <button  className="logBtn" id="login" onClick={login}>
                         Login
                     </button>
-                </div>
             </div>
-            <Link to="/" className="home">Home</Link>
+            <Link  to="/" className="home" >Home</Link>
         </>
     );
 }

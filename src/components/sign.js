@@ -2,16 +2,13 @@ import React,{useState , useContext} from "react";
 import { Context } from "./context.js";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import {toast} from "react-toastify"
 export default function Signup(){
     const navigate = useNavigate();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const context=useContext(Context);
-    const [nameAlert,setNameAlert]= useState("");
-    const [emailAlert,setEmailAlert]= useState("");
-    const [passwordAlert,setPasswordAlert]= useState("");
 
     const fillEmail = (event) => {
         setEmail(event.target.value);
@@ -28,27 +25,50 @@ export default function Signup(){
     const signup =async()=>{
         
         let isemail = email.indexOf("@gmail.com");
-        if(name.length<2){
-           setNameAlert("Enter a valid string")
+        if(name.length<1){
+            toast( "Please enter a valid string" ,{
+                position:"bottom-right",
+                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                progressStyle:{background:"brown"},
+            })
+
         }
 
         else if(isemail === -1 || email.length<14){
-            setEmailAlert("Enter a valid email address")
+             toast( "Enter a valid email address" ,{
+                    position:"bottom-right",
+                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                    progressStyle:{background:"brown"},
+                })
+
         }
 
         else if(password.length<6){
-            setPasswordAlert("Plaese enter a strong password for security")
+            toast( "Please enter a strong password having greater than 6 characters" ,{
+                position:"bottom-right",
+                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"medium",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                progressStyle:{background:"brown"},
+            })
+
         }
         else{
-            let signBtn = document.getElementById("signup");
+            let signBtn = document.getElementById("login");
             signBtn.innerHTML="signing in...";
-            setEmailAlert("");
-            setNameAlert("");
-            setPasswordAlert("");
             let sign = await context.signup(name,email,password,[]);
             if(sign === "signin successfull"){
+                toast( "Sign up successfull" ,{
+                    position:"bottom-right",
+                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                    progressStyle:{background:"darkgreen"},
+                })
+
                 navigate("/");
             }else{
+                toast( "A user already exists" ,{
+                    position:"bottom-right",
+                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                    progressStyle:{background:"brown"},
+                })
                 signBtn.innerHTML="Sign up";
             }
         }
@@ -56,62 +76,30 @@ export default function Signup(){
 
     return (
         <>
-            <div className="container" style={{height:"80vh"}}>
-                <div className="incontainer">
-                    
-                <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">
-                            Name
-                        </label>
+            <div className="logContainer">
                         <input
                             type="text"
-                            autoComplete="off"
-                            className="form-control"
-                            id="exampleInputPassword1"
                             value={name}
                             onChange={fillName}
+                            placeholder="Enter your Name"
                         />
-                        <div className="form-text" style={{color:"red",fontSize:"large"}}>
-                           {nameAlert}
-                        </div>
-                    </div>
 
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">
-                            Email address
-                        </label>
                         <input
                             type="email"
-                            className="form-control"
-                            autoComplete="off"
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
                             value={email}
                             onChange={fillEmail}
+                            placeholder="Enter your Email"
                         />
-                        <div style={{color:"red",fontSize:"large"}}>
-                         {emailAlert}
-                        </div>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">
-                            Password
-                        </label>
+                
                         <input
-                            type="password"
-                            className="form-control"
-                            id="exampleInputPassword1"
                             value={password}
                             onChange={fillPassword}
+                            placeholder="Enter your Password"
                         />
-                    </div>
-                    <div className="form-text" style={{color:"red",fontSize:"large"}}>
-                         {passwordAlert}
-                        </div>
-                    <button className="btn btn-primary" id="signup" onClick={signup} >
+                    
+                    <button className="logBtn" id="login" onClick={signup}>
                         Sign up
                     </button>
-                </div>
             </div>
             <Link to="/" className="home">Home</Link>
            </>

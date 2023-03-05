@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar" style={{width:"100vw"}}>
           <h2>
             {context.name}
           </h2>
@@ -36,9 +36,9 @@ export default function Navbar() {
            I-Notebook
           </h2>
           <div> 
-             <a style={logSign} onClick={()=>{navigate("/login")}}>Login</a> 
-             <a style={logSign} onClick={()=>{navigate("/signup")}} >Sign up</a>
-             <a style={logOut} onClick={async()=>{
+             <a style={logSign} onClick={()=>{navigate("/login")}} className="navbtn">Login</a> 
+             <a style={logSign} onClick={()=>{navigate("/signup")}} className="navbtn" >Sign up</a>
+             <a style={logOut} className="navbtn"  onClick={async()=>{
               localStorage.clear();
               window.location.reload();
              }} >Logout</a>

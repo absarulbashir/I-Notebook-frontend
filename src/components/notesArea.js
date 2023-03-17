@@ -60,16 +60,15 @@ let year = date_ob.getFullYear();
     }
 
     if (localSt && context.islogin===false) {
-        document.querySelector("body").style.background="white";
         return <img src={Loading} alt="Loading..." style={{ display: "block", margin: "auto", marginTop: "20vh", width: "25vw" }} />
     }
     else{
-        document.querySelector("body").style.background="rgb(250, 224, 255)";
     }
     
     
     return (
         <>
+            <div className="NotesCont">
             <div className="container">
                         <input
                             type="text"
@@ -86,6 +85,7 @@ let year = date_ob.getFullYear();
                     <button className="logBtn" onClick={addNote}>
                         Add Note
                     </button>
+            </div>
             </div>
 
             <div className="notesContainer">
@@ -108,7 +108,7 @@ let year = date_ob.getFullYear();
                                         });
                                         setData(newData);
                                     }
-                                }} ><span className="material-symbols-rounded">
+                                }} ><span class="material-symbols-outlined">
                                 delete
                                 </span></button>
 

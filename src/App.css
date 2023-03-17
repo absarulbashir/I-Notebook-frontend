@@ -2,6 +2,14 @@
     margin:0%;
     padding:0%
 }
+button{
+    cursor: pointer;
+}
+
+input,textarea{
+    font-family: 'poppins';
+    background-color: var(--placeholder);
+}
 
 body{
     display: flex;
@@ -10,9 +18,11 @@ body{
     font-family: 'poppins';
     font-size: medium;
     --theme: rgb(91, 6, 119);
-    background: rgb(250, 224, 255);
+    --placeholder:rgb(247, 225, 255);
     transition: all;
+    overflow-x: hidden;
 }
+
 
 .logContainer{
     width: 30vw;
@@ -23,40 +33,35 @@ body{
     align-items: center;
     margin:60px auto;
     border: 3px solid var(--theme);
-    border-radius: 0px;
-    border-top-right-radius:40px;
-    border-bottom-left-radius:40px;
+    border-radius: 35px;
     padding: 10px 0px;
 }
 
 .logContainer input{
-    width:80%;
+    width:75%;
     height: 6.5vh;
     border-radius: 10px;
     margin: 20px 0px;
     outline: none;
-    border: none;
-    border-bottom:2px solid var(--theme);
+    border:2px solid var(--theme);
     background: none;
     padding: 0px 6px;
     color: rgb(65, 65, 65);
-    border-radius: 5px;
     font-size: large;
 }
 
 nav{
+    height: 9vh;
     background-color:rgb(174, 1, 209);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbtn{
-    font-size: large;
     width: fit-content;
-    padding: 4px 8px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:0px;
-    border-top-left-radius:0px;
-    border: none;
+    padding: 3px 5px;
+    border-radius: 8px;
     margin: 0px 5px;
     background-color: var(--theme);
     color: white;
@@ -66,6 +71,7 @@ nav{
     transition: all;
     transition-duration: 0.5s;
     border: 2px solid white;
+    font-family: 'poppins';
    
 }
 .navbtn:hover{
@@ -75,32 +81,28 @@ nav{
 .logBtn{
     font-size: large;
     width: fit-content;
-    padding: 4px 8px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:0px;
-    border-top-left-radius:0px;
+    padding: 4px 7px;
+    border-radius: 8px;
     border: none;
     margin: 5px 0px;
     background-color: var(--theme);
     color: white;
+    cursor: pointer;
+    font-family: 'poppins';
    
 }
 .logBtn:hover{
     background-color:rgb(63, 2, 83) ;
 }
-nav{
-    width:99vw;
-    color:white;
-}
+
 nav h2{
-    font-size: x-large;
+    font-size: larger;
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     font-family: 'Audiowide';
 }
 .inotebook{
-    font-size: xx-large;
+    font-size: x-large;
     color: rgb(255, 255, 255);
 }
 
@@ -114,13 +116,16 @@ nav h2{
     align-items: center;
     margin: 10vh 0px;
 }
+.NotesCont{
+    display: flex;
+    justify-content: center;
+}
+
 .notes{
     border-radius: 0px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius:25px;
-    border-bottom-right-radius: 25px;
     border: 2px solid var(--theme);
     height: fit-content;
+    border-radius: 20px;
     padding: 20px;
     margin: 15px;
     display: flex;
@@ -164,10 +169,7 @@ nav h2{
     font-size: large;
     width: fit-content;
     padding: 4px 8px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:0px;
-    border-top-left-radius:0px;
+    border-radius: 10px;
     border: none;
     margin: 5px 0px;
     background-color: var(--theme);
@@ -187,20 +189,16 @@ nav h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 0px;
-    border-top-right-radius: 40px;
-    border-bottom-left-radius:40px;
+    border-radius: 35px;
 }
 .container input,textarea{
-    width: 80%;
-    border-radius: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    width: 70%;
+    border-radius: 10px;
     border: 2px solid var(--theme);
     border-bottom: 3px solid var(--theme);
     background: none;
     margin: 20px 0px;
-    height: 7vh;
+    height: 5vh;
     outline: none;
     padding: 4px 10px;
     font-size: large;
@@ -208,6 +206,7 @@ nav h2{
 }
 .container textarea{
     height: 25vh;
+    border-radius: 13px;
 }
 
 @media (max-width:900px) and (min-width:600px){
@@ -225,6 +224,9 @@ nav h2{
     }
     body{
         font-size: medium;
+    }
+    .toast{
+        width: 40vw;
     }
 }
 
@@ -259,6 +261,10 @@ nav h2{
     .logContainer{
         width: 83vw;
         height: 55vh;
+    }
+    .toast{
+        width: 70vw;
+        margin: 10px;
     }
 }
 

@@ -23,15 +23,18 @@ export default function Login() {
         let isemail = email.indexOf("@gmail.com");
         if(isemail===-1 || email.length<=10){
             toast( "Enter a valid Email Address" ,{
-                position:"bottom-right",
-                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                position:"bottom-left",
+                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",
+                className:"toast",
+                fontWeight:"200",borderRadius:"13px"},
                 progressStyle:{background:"brown"},
                })
         }
         else if(password.length<6){
             toast( "Enter a valid Password" ,{
-                position:"bottom-right",
-                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                position:"bottom-left",
+                className:"toast",
+                style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"13px"},
                 progressStyle:{background:" rgb(135, 2, 2)"},
                })
         }
@@ -41,16 +44,18 @@ export default function Login() {
             let log=await context.login(email,password);
             if(log==="login successfull"){
                 toast( "Login Successfull" ,{
-                    position:"bottom-right",
-                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                    position:"bottom-left",
+                    className:"toast",
+                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"13px"},
                     progressStyle:{background:"darkgreen"},
                    })
                 navigate("/");
             }
             else{
                 toast( "No User Found" ,{
-                    position:"bottom-right",
-                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"0px",borderTopRightRadius:"15px",borderBottomLeftRadius:"15px"},
+                    position:"bottom-left",
+                    className:"toast",
+                    style:{background:"rgb(91, 6, 119)",color:"white",fontSize:"large",fontWeight:"200",borderRadius:"13px"},
                     progressStyle:{background:"brown"},
                 })
 

@@ -2,12 +2,21 @@
     margin:0%;
     padding:0%
 }
+
+::-webkit-scrollbar{
+    display:none;
+}
+
+.toast{
+    font-family: 'Fira Code';
+}
+
 button{
     cursor: pointer;
 }
 
 input,textarea{
-    font-family: 'poppins';
+    font-family: 'Fira Code';
     background-color: var(--placeholder);
 }
 
@@ -15,7 +24,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'poppins';
+    font-family: 'Fira Code';
     font-size: medium;
     --theme: rgb(91, 6, 119);
     --placeholder:rgb(247, 225, 255);
@@ -60,18 +69,17 @@ nav{
 
 .navbtn{
     width: fit-content;
-    padding: 3px 5px;
+    padding: 5px;
     border-radius: 8px;
     margin: 0px 5px;
     background-color: var(--theme);
     color: white;
     position: relative;
-    right: 40px;
+    right: 16px;
     text-decoration:none;
     transition: all;
     transition-duration: 0.5s;
     border: 2px solid white;
-    font-family: 'poppins';
    
 }
 .navbtn:hover{
@@ -81,14 +89,15 @@ nav{
 .logBtn{
     font-size: large;
     width: fit-content;
-    padding: 4px 7px;
+    padding: 5px;
     border-radius: 8px;
     border: none;
     margin: 5px 0px;
     background-color: var(--theme);
     color: white;
     cursor: pointer;
-    font-family: 'poppins';
+    border: 2px solid rgb(174, 1, 209);
+    font-family: 'Fira Code';
    
 }
 .logBtn:hover{
@@ -96,14 +105,16 @@ nav{
 }
 
 nav h2{
-    font-size: larger;
-    color: rgb(255, 255, 255);
-    margin: 0px 20px;
-    font-family: 'Audiowide';
-}
-.inotebook{
     font-size: x-large;
     color: rgb(255, 255, 255);
+    margin: 0px 20px;
+    font-family: 'Fira Code';
+    font-weight: 500;
+}
+.inotebook{
+    font-size: xx-large;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
 }
 
 
@@ -131,7 +142,6 @@ nav h2{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-family: 'poppins';
     color: rgb(41, 41, 41);
 }
 .notes div{
@@ -148,7 +158,7 @@ nav h2{
     width:90%;
     overflow-wrap: break-word;
     height: fit-content;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .notes p{
@@ -175,6 +185,7 @@ nav h2{
     background-color: var(--theme);
     color: white;
     text-decoration: none;
+    border: 2px solid rgb(174, 1, 209);
 }
 .home:hover{
     background-color:rgb(63, 2, 83);

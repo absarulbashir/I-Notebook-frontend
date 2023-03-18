@@ -33,7 +33,7 @@ export default function Signup() {
           fontSize: "large",
           fontWeight: "400",
           borderRadius: "13px",
-          fontFamily: "Fira Code",
+          fontFamily: "poppins",
         },
         progressStyle: { background: "brown" },
       });
@@ -47,7 +47,7 @@ export default function Signup() {
           fontSize: "large",
           fontWeight: "400",
           borderRadius: "13px",
-          fontFamily: "Fira Code",
+          fontFamily: "poppins",
         },
         progressStyle: { background: "brown" },
       });
@@ -61,7 +61,7 @@ export default function Signup() {
           fontSize: "medium",
           fontWeight: "400",
           borderRadius: "13px",
-          fontFamily: "Fira Code",
+          fontFamily: "poppins",
         },
         progressStyle: { background: "brown" },
       });
@@ -79,7 +79,7 @@ export default function Signup() {
             fontSize: "large",
             fontWeight: "400",
             borderRadius: "13px",
-            fontFamily: "Fira Code",
+            fontFamily: "poppins",
           },
           progressStyle: { background: "darkgreen" },
         });
@@ -95,7 +95,7 @@ export default function Signup() {
             fontSize: "large",
             fontWeight: "400",
             borderRadius: "13px",
-            fontFamily: "Fira Code",
+            fontFamily: "poppins",
           },
           progressStyle: { background: "brown" },
         });

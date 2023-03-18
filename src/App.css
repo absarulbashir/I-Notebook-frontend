@@ -8,7 +8,8 @@
 }
 
 .toast {
-    font-family: 'Fira Code';
+    font-family: 'poppins';
+    border-radius: 13px;
 }
 
 button {
@@ -17,7 +18,7 @@ button {
 
 input,
 textarea {
-    font-family: 'Fira Code';
+    font-family: 'poppins';
     background-color: var(--placeholder);
 }
 
@@ -25,7 +26,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Fira Code';
+    font-family: 'poppins';
     font-size: medium;
     --theme: rgb(91, 6, 119);
     --placeholder: rgb(247, 225, 255);
@@ -99,7 +100,7 @@ nav {
     color: white;
     cursor: pointer;
     border: 2px solid rgb(174, 1, 209);
-    font-family: 'Fira Code';
+    font-family: 'poppins';
 
 }
 
@@ -111,14 +112,15 @@ nav h2 {
     font-size: x-large;
     color: rgb(255, 255, 255);
     margin: 0px 20px;
-    font-family: 'Fira Code';
+    font-family: 'Rubik 80s Fade';
     font-weight: 500;
 }
 
 .inotebook {
     font-size: xx-large;
     color: rgb(255, 255, 255);
-    font-weight: 600;
+    font-weight: 500;
+    font-family: 'Rubik 80s Fade';
 }
 
 
@@ -316,7 +318,7 @@ textarea {
     .loader {
         display: block;
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 15vh;
         width: 35vw;
     }
 }

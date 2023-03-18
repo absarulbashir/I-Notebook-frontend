@@ -29,7 +29,8 @@ export default function Login() {
           fontSize: "large",
           className: "toast",
           fontWeight: "400",
-          fontFamily: "Fira Code",
+          fontFamily: "poppins",
+          borderRadius: "13px",
         },
         progressStyle: { background: "brown" },
       });
@@ -42,7 +43,8 @@ export default function Login() {
           color: "white",
           fontSize: "large",
           fontWeight: "400",
-          fontFamily: "Fira Code",
+          fontFamily: "poppins",
+          borderRadius: "13px",
         },
         progressStyle: { background: " rgb(135, 2, 2)" },
       });
@@ -59,7 +61,8 @@ export default function Login() {
             color: "white",
             fontSize: "large",
             fontWeight: "400",
-            fontFamily: "Fira Code",
+            fontFamily: "poppins",
+            borderRadius: "13px",
           },
           progressStyle: { background: "darkgreen" },
         });
@@ -73,7 +76,8 @@ export default function Login() {
             color: "white",
             fontSize: "large",
             fontWeight: "400",
-            fontFamily: "Fira Code",
+            fontFamily: "poppins",
+            borderRadius: "13px",
           },
           progressStyle: { background: "brown" },
         });

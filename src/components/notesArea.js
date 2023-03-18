@@ -63,18 +63,7 @@ export default function NotesArea() {
   };
 
   if (localSt && context.islogin === false) {
-    return (
-      <img
-        src={Loading}
-        alt="Loading..."
-        style={{
-          display: "block",
-          margin: "auto",
-          marginTop: "20vh",
-          width: "25vw",
-        }}
-      />
-    );
+    return <img src={Loading} alt="Loading..." className="loader" />;
   } else {
   }
 

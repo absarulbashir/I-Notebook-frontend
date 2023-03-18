@@ -170,6 +170,13 @@ nav h2{
     font-weight: 500;
 }
 
+.loader{
+    display: "block";
+    margin: auto;
+    margin-top: 20vh;
+    width: 25vw;
+}
+
 .home{
     padding: 4px 8px;
     position: relative;
@@ -239,6 +246,12 @@ nav h2{
     .toast{
         width: 40vw;
     }
+    .loader{
+        display: "block";
+        margin: auto;
+        margin-top: 17vh;
+        width: 28vw;
+    }
 }
 
 
@@ -276,6 +289,12 @@ nav h2{
     .toast{
         width: 70vw;
         margin: 10px;
+    }
+    .loader{
+        display: "block";
+        margin: auto;
+        margin-top: 10vh;
+        width: 35vw;
     }
 }
 

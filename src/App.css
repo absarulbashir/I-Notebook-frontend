@@ -1,92 +1,94 @@
-*{
-    margin:0%;
-    padding:0%
+* {
+    margin: 0%;
+    padding: 0%
 }
 
-::-webkit-scrollbar{
-    display:none;
+::-webkit-scrollbar {
+    display: none;
 }
 
-.toast{
+.toast {
     font-family: 'Fira Code';
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-input,textarea{
+input,
+textarea {
     font-family: 'Fira Code';
     background-color: var(--placeholder);
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Fira Code';
     font-size: medium;
     --theme: rgb(91, 6, 119);
-    --placeholder:rgb(247, 225, 255);
+    --placeholder: rgb(247, 225, 255);
     transition: all;
     overflow-x: hidden;
 }
 
 
-.logContainer{
+.logContainer {
     width: 30vw;
     height: 65vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin:60px auto;
+    margin: 60px auto;
     border: 3px solid var(--theme);
     border-radius: 35px;
     padding: 10px 0px;
 }
 
-.logContainer input{
-    width:75%;
+.logContainer input {
+    width: 75%;
     height: 6.5vh;
     border-radius: 10px;
     margin: 20px 0px;
     outline: none;
-    border:2px solid var(--theme);
+    border: 2px solid var(--theme);
     background: none;
     padding: 0px 6px;
     color: rgb(65, 65, 65);
     font-size: large;
 }
 
-nav{
+nav {
     height: 9vh;
-    background-color:rgb(174, 1, 209);
+    background-color: rgb(174, 1, 209);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbtn{
+.navbtn {
     width: fit-content;
-    padding: 5px;
+    padding: 5px 3px;
     border-radius: 8px;
     margin: 0px 5px;
     background-color: var(--theme);
     color: white;
     position: relative;
     right: 16px;
-    text-decoration:none;
+    text-decoration: none;
     transition: all;
     transition-duration: 0.5s;
     border: 2px solid white;
-   
-}
-.navbtn:hover{
-    background-color:rgb(63, 2, 83) ;
+
 }
 
-.logBtn{
+.navbtn:hover {
+    background-color: rgb(63, 2, 83);
+}
+
+.logBtn {
     font-size: large;
     width: fit-content;
     padding: 5px;
@@ -98,27 +100,29 @@ nav{
     cursor: pointer;
     border: 2px solid rgb(174, 1, 209);
     font-family: 'Fira Code';
-   
-}
-.logBtn:hover{
-    background-color:rgb(63, 2, 83) ;
+
 }
 
-nav h2{
+.logBtn:hover {
+    background-color: rgb(63, 2, 83);
+}
+
+nav h2 {
     font-size: x-large;
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     font-family: 'Fira Code';
     font-weight: 500;
 }
-.inotebook{
+
+.inotebook {
     font-size: xx-large;
     color: rgb(255, 255, 255);
     font-weight: 600;
 }
 
 
-.notesContainer{
+.notesContainer {
     width: 99vw;
     height: fit-content;
     display: grid;
@@ -127,12 +131,13 @@ nav h2{
     align-items: center;
     margin: 10vh 0px;
 }
-.NotesCont{
+
+.NotesCont {
     display: flex;
     justify-content: center;
 }
 
-.notes{
+.notes {
     border-radius: 0px;
     border: 2px solid var(--theme);
     height: fit-content;
@@ -144,44 +149,46 @@ nav h2{
     justify-content: space-evenly;
     color: rgb(41, 41, 41);
 }
-.notes div{
+
+.notes div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.notes div p{
-   width:fit-content;
+
+.notes div p {
+    width: fit-content;
 }
 
 
-.notes h2{
-    width:90%;
+.notes h2 {
+    width: 90%;
     overflow-wrap: break-word;
     height: fit-content;
     font-weight: 500;
 }
 
-.notes p{
+.notes p {
     width: 90%;
-    height:fit-content;
+    height: fit-content;
     overflow-wrap: break-word;
     max-height: 15vw;
-    overflow-y:auto;
+    overflow-y: auto;
     font-weight: 500;
 }
 
-.loader{
-    display: "block";
+.loader {
+    display: block;
     margin: auto;
     margin-top: 20vh;
     width: 25vw;
 }
 
-.home{
+.home {
     padding: 4px 8px;
     position: relative;
     color: white;
-    left:5px;
+    left: 5px;
     bottom: 20px;
     font-size: large;
     width: fit-content;
@@ -194,11 +201,12 @@ nav h2{
     text-decoration: none;
     border: 2px solid rgb(174, 1, 209);
 }
-.home:hover{
-    background-color:rgb(63, 2, 83);
+
+.home:hover {
+    background-color: rgb(63, 2, 83);
 }
 
-.container{
+.container {
     border: 3px solid var(--theme);
     width: 32vw;
     height: 70vh;
@@ -209,7 +217,9 @@ nav h2{
     justify-content: center;
     border-radius: 35px;
 }
-.container input,textarea{
+
+.container input,
+textarea {
     width: 70%;
     border-radius: 10px;
     border: 2px solid var(--theme);
@@ -222,32 +232,37 @@ nav h2{
     font-size: large;
     color: rgb(34, 34, 34);
 }
-.container textarea{
+
+.container textarea {
     height: 25vh;
     border-radius: 13px;
 }
 
-@media (max-width:900px) and (min-width:600px){
-    .notesContainer{
+@media (max-width:900px) and (min-width:600px) {
+    .notesContainer {
         grid-template-columns: 45vw 45vw;
     }
 
-    .container{
+    .container {
         width: 70vw;
         height: 60vh;
     }
-    .logContainer{
-        width:70vw;
+
+    .logContainer {
+        width: 70vw;
         height: 60vh;
     }
-    body{
+
+    body {
         font-size: medium;
     }
-    .toast{
+
+    .toast {
         width: 40vw;
     }
-    .loader{
-        display: "block";
+
+    .loader {
+        display: block;
         margin: auto;
         margin-top: 17vh;
         width: 28vw;
@@ -255,46 +270,53 @@ nav h2{
 }
 
 
-@media (max-width:600px) and (min-width:0px){
-    .notesContainer{
+@media (max-width:600px) and (min-width:0px) {
+    .notesContainer {
         grid-template-columns: 90vw;
     }
 
-    .container{
+    .container {
         width: 83vw;
         padding: 0px;
         height: 55vh;
     }
-    body{
+
+    body {
         font-size: small;
     }
-    nav h2{
+
+    nav h2 {
         font-size: large;
         margin: 0px 20px;
     }
-    .inotebook{
+
+    .inotebook {
         font-size: larger;
     }
-    .logBtn{
+
+    .logBtn {
         font-size: medium;
     }
-   .navbtn {
+
+    .navbtn {
         font-size: medium;
         padding: 1px 4px;
     }
-    .logContainer{
+
+    .logContainer {
         width: 83vw;
         height: 55vh;
     }
-    .toast{
+
+    .toast {
         width: 70vw;
         margin: 10px;
     }
-    .loader{
-        display: "block";
+
+    .loader {
+        display: block;
         margin: auto;
         margin-top: 10vh;
         width: 35vw;
     }
 }
-

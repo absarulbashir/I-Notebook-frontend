@@ -113,13 +113,13 @@ nav h2 {
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     font-family: 'Rubik 80s Fade';
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .inotebook {
     font-size: xx-large;
     color: rgb(255, 255, 255);
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'Rubik 80s Fade';
 }
 
@@ -292,6 +292,10 @@ textarea {
         margin: 0px 20px;
     }
 
+    nav{
+        height: 7vh;
+    }
+
     .inotebook {
         font-size: larger;
     }
@@ -302,7 +306,7 @@ textarea {
 
     .navbtn {
         font-size: medium;
-        padding: 1px 4px;
+        padding: 0.5px 3px;
     }
 
     .logContainer {
@@ -318,7 +322,7 @@ textarea {
     .loader {
         display: block;
         margin: auto;
-        margin-top: 15vh;
-        width: 35vw;
+        margin-top: 30vh;
+        width: 50vw;
     }
 }
